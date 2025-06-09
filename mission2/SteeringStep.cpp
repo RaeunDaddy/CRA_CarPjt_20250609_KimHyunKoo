@@ -13,7 +13,7 @@ void SteeringStep::PrintInputInfo() {
 }
 
 bool SteeringStep::CheckValidAnswer(int answer) {
-    if (!(answer >= 0 && answer <= 2))
+    if (!(answer >= 0 && answer <= SteeringSystem_MOBIS))
     {
         printf("ERROR :: 조향장치는 0 ~ 2 범위만 선택 가능\n");
         delay(800);

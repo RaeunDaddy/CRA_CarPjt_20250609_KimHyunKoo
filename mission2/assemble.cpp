@@ -2,12 +2,22 @@
 #include <string.h>
 #include <stdlib.h>
 
+#include "Type.h"
 #include "CombineCarModule.h"
-#include "assemble.h"
 
-bool needGoBackStep(int step, int nextStep) {
-    return (step > nextStep);
+#define CLEAR_SCREEN "\033[H\033[2J"
+
+#ifdef _DEBUG
+
+#include "gmock/gmock.h"
+
+int main()
+{
+    testing::InitGoogleMock();
+    return RUN_ALL_TESTS();
 }
+
+#else
 
 int main()
 {
@@ -52,9 +62,11 @@ int main()
         }
 
         int nextStep = step->GetNextStep(answer);
-        if (needGoBackStep(step->GetMyStep(), nextStep) == false) {
+        if ((step->GetMyStep() > nextStep) == false) {
             step->ProcessAnswer(answer);
         }
         step = combineCarModule.GetStep(nextStep);
     }
 }
+
+#endif

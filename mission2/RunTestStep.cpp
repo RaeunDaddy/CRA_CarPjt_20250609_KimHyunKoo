@@ -14,7 +14,7 @@ void RunTestStep::PrintInputInfo() {
 }
 
 bool RunTestStep::CheckValidAnswer(int answer) {
-    if (!(answer >= 0 && answer <= 2))
+    if (!(answer >= 0 && answer <= RunTest_TestCombine))
     {
         printf("ERROR :: Run 또는 Test 중 하나를 선택 필요\n");
         delay(800);

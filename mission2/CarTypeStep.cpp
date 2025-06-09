@@ -19,7 +19,7 @@ void CarTypeStep::PrintInputInfo() {
 }
 
 bool CarTypeStep::CheckValidAnswer(int answer) {
-    if (!(answer >= 1 && answer <= 3))
+    if (!(answer >= CarType_SEDAN && answer <= CarType_TRUCK))
     {
         printf("ERROR :: 차량 타입은 1 ~ 3 범위만 선택 가능\n");
         delay(800);

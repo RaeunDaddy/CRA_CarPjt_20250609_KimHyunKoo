@@ -4,7 +4,7 @@ enum QuestionType
 {
     CarType_Q,
     Engine_Q,
-    breakSystem_Q,
+    BreakSystem_Q,
     SteeringSystem_Q,
     Run_Test,
 
@@ -57,6 +57,7 @@ enum ErrorType
 
 static void delay(int ms)
 {
+#ifndef _DEBUG
     volatile int sum = 0;
     for (int i = 0; i < 1000; i++)
     {
@@ -68,4 +69,5 @@ static void delay(int ms)
             }
         }
     }
+#endif
 }

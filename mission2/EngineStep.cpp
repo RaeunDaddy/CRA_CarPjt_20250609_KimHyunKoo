@@ -15,7 +15,7 @@ void EngineStep::PrintInputInfo() {
 }
 
 bool EngineStep::CheckValidAnswer(int answer) {
-    if (!(answer >= 0 && answer <= 4))
+    if (!(answer >= 0 && answer <= Engine_Dead))
     {
         printf("ERROR :: 엔진은 0 ~ 4 범위만 선택 가능\n");
         delay(800);

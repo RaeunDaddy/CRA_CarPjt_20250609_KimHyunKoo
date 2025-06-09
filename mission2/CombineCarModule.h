@@ -10,6 +10,7 @@ public:
 	IStep* GetStep(int step);
 	void RunProducedCar();
 	void TestProducedCar();
+
 private:
 	int module[QuestionType_Count]{ 0, };
 	IStep* step[QuestionType_Count];
@@ -20,5 +21,11 @@ private:
 	void printBreakSystem();
 	void printSteeringSystem();
 	bool isDeadEngine();
+
+#ifdef _DEBUG
+public:
+#else
+private:
+#endif
 	int getErrorType();
 };
