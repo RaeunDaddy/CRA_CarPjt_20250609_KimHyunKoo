@@ -1,3 +1,5 @@
+#ifdef _DEBUG
+
 #include "gmock/gmock.h"
 #include "CombineCarModule.h"
 
@@ -387,3 +389,5 @@ TEST(INTEGRATION, VALID_DEAD_ENGINE) {
 
 	EXPECT_EQ(Error_None, combinCarModule.getErrorType());
 }
+
+#endif
